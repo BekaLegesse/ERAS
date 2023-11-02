@@ -58,11 +58,11 @@ CREATE TABLE `attendees` (
   `email` varchar(200) NOT NULL,
   `address` text NOT NULL,
   `status` tinyint(1) NOT NULL COMMENT '0=Awaiting/Absent=1=Present',
-  `date_created` int(11) NOT NULL DEFAULT current_timestamp()
+  `date_created` int(11) NOT NULL DEFAULT(current_timestamp)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `attendees`
+-- Dumping data fPRIMARYPRIMARYPRIMARYor table `attendees`
 --
 
 INSERT INTO `attendees` (`id`, `event_id`, `firstname`, `lastname`, `middlename`, `contact`, `gender`, `email`, `address`, `status`, `date_created`) VALUES
@@ -129,8 +129,11 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `middlename`, `contact`, `ad
 --
 -- Indexes for table `assigned_registrar`
 --
+
+ALTER TABLE `assigned_registrar` DROP PRIMARY KEY;
 ALTER TABLE `assigned_registrar`
   ADD PRIMARY KEY (`id`);
+  
 
 --
 -- Indexes for table `attendees`
