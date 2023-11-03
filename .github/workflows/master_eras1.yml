@@ -62,5 +62,5 @@ jobs:
         with:
           app-name: 'ERAS1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_31FD2B1B2B0141EB8FD81121E9EEB2CC }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_416A629040EF430E96E1E6BA2A3F0005 }}
           package: .
