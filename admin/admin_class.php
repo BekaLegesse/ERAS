@@ -90,6 +90,8 @@ Class Action {
     $stmt = $this->db->prepare("UPDATE users SET column1 = ?, column2 = ..., WHERE id = ?");
     $stmt->bind_param("ssi", $value1, $value2, $id); // Bind your values here
     $stmt->execute();
+		}
+	
 }
 
 
