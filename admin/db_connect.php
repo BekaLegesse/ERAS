@@ -1,4 +1,5 @@
 <?php
+session_start();
 $serverName = "project-phase2.mysql.database.azure.com";
 $username = "projectphase2";
 $password = "Nedamcoacademy2";
