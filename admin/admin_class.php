@@ -82,11 +82,16 @@ Class Action {
 			$data .= ", avatar = '$fname' ";
 
 		}
-		if(empty($id)){
-			$save = $this->db->query("INSERT INTO users set $data");
-		}else{
-			$save = $this->db->query("UPDATE users set $data where id = $id");
-		}
+		if (empty($id)) {
+    $stmt = $this->db->prepare("INSERT INTO users (column1, column2, ...) VALUES (?, ?, ...)");
+    $stmt->bind_param("ss...", $value1, $value2, ...); // Bind your values here
+    $stmt->execute();
+} else {
+    $stmt = $this->db->prepare("UPDATE users SET column1 = ?, column2 = ..., WHERE id = ?");
+    $stmt->bind_param("ssi", $value1, $value2, $id); // Bind your values here
+    $stmt->execute();
+}
+
 
 		if($save){
 			return 1;
